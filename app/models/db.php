@@ -3,8 +3,7 @@ class Database {
     private $host = 'localhost';
     private $user = 'root';
     private $password = 'new_password';
-    private $database = 'assurance
-    ';
+    private $database = 'assurance';
     private static $instance;
     protected $pdo;
 
@@ -24,22 +23,20 @@ class Database {
 
         return self::$instance;
     }
-    public function getconnection({
-        return $thi->conn;
-    })
+    public function getConnection(){
+        return $this->pdo;
+    }
 }
 $object = Database::getInstance();
-$conn = $instance->getInstance();
+$conn = $object->getInstance();
 var_dump($conn);
-$object = Database::getInstance();
-$conn = $instance->getInstance();
-var_dump($conn);
-$object = Database::getInstance();
-$conn = $instance->getInstance();
-var_dump($conn);
+// $object = Database::getInstance();
+// $conn = $object->getInstance();
+// var_dump($conn);
+// $object = Database::getInstance();
+// $conn = $object->getInstance();
+// var_dump($conn);
 ?>
-
-
 
 
 
