@@ -69,18 +69,11 @@ class Insurer {
 
 
 
-// Include the Database and Insurer classes
-include 'Database.php';
-include 'Insurer.php';
-
-// Create an instance of the Insurer class
-
-// Example usage of getter methods
-echo $insurer->getId() . "\n";
-echo $insurer->getNom() . "\n";
-echo $insurer->getAddress() . "\n";
-echo $insurer->getEmail() . "\n";
-echo $insurer->getPhone() . "\n";
+// echo $insurer->getId() . "\n";
+// echo $insurer->getNom() . "\n";
+// echo $insurer->getAddress() . "\n";
+// echo $insurer->getEmail() . "\n";
+// echo $insurer->getPhone() . "\n";
 ?>
 
 
