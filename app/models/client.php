@@ -37,7 +37,7 @@ class Client
         return $this->CIN;
     }
     
-    public function getAdress(){
+    public function getAddress(){
         return $this->address;
     }
 
