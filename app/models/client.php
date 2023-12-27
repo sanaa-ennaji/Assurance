@@ -51,26 +51,26 @@ class Client
 
 
 
-    public function setId(){
-        return $this->id;
+    public function setId($id){
+        return $this->id = $id;
     }
 
-    public function setFullname(){
-        return $this->fullName;
+    public function setFullname($fullName){
+        return $this->fullName =$fullName;
     }
-    public function setCIN(){
-        return $this->CIN;
+    public function setCIN($CIN){
+        return $this->CIN =$CIN;
     }
     
-    public function setAdress(){
-        return $this->address;
+    public function setAdress($address){
+        return $this->address =$address;
     }
 
-    public function setEmail(){
-        return $this->email;
+    public function setEmail($email){
+        return $this->email =$email;
     }
-    public function setPhone(){
-        return $this->phone;
+    public function setPhone($phone){
+        return $this->phone =$phone;
     }
     
 }

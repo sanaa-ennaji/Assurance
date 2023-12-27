@@ -24,7 +24,7 @@ class Insurer {
 
 
     }
-
+//geters
     public function getId() {
         return $this->id;
     }
