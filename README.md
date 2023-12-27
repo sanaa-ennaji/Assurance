@@ -1,2 +1,2 @@
 # assurance_brif9
-OOP / MVC / PDO
+OOP / MVC / PDO /singleton pattern
