@@ -1,5 +1,5 @@
 <?php
-require'db.php';
+// require'db.php';
 class InsuranceOfClient {
     private $clientId;
     private $insurerId;
@@ -10,8 +10,8 @@ class InsuranceOfClient {
         $this->clientId = $clientId;
         $this->insurerId = $insurerId;
 
-        $database = Database::getInstance();
-        $this->pdo = $database::getConnection();
+        // $database = Database::getInstance();
+        // $this->pdo = $database::getConnection();
 
         
     }

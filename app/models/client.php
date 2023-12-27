@@ -1,5 +1,6 @@
 <?php
-require 'db.php';
+
+// namespace app\modeles;
 class Client
 {
 
@@ -22,8 +23,8 @@ class Client
         $this->email = $email;
 
 
-        $database = Database::getInstance();
-        $this->pdo = $database->getConnection();
+        // $database = Database::getInstance();
+        // $this->pdo = $database->getConnection();
 
     }
     public function getId(){

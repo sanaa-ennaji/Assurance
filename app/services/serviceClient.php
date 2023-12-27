@@ -6,14 +6,14 @@
   require 'Iserviceclient.php';
   class ServiceClient implements IServiceClient {
 
-    private $database;
+    private $db;
 
-    public function __construct(Database $database) {
-        $this->database = $database;
+    public function __construct(Database $db) {
+        $this->db = $db;
     }
 
     public function insert(Client $client) {
-        $pdo = $this->database->getConnection();
+        $pdo = $this->db->getConnection();
 
         $id = $client->getId();
         $fullName = $client->getFullName();
@@ -36,7 +36,7 @@
     }
 
     public function edit(Client $client) {
-        $pdo = $this->database->getConnection();
+        $pdo = $this->db->getConnection();
 
         $id = $client->getId();
         $fullName = $client->getFullName();
@@ -59,7 +59,7 @@
     }
 
     public function delete($id) {
-        $pdo = $this->database->getConnection();
+        $pdo = $this->db->getConnection();
         $sql = "DELETE FROM client WHERE id = :id";
 
         $stmt = $pdo->prepare($sql);
@@ -69,7 +69,7 @@
     }
 
     public function display() {
-        $pdo = $this->database->getConnection();
+        $pdo = $this->db->getConnection();
         $sql = "SELECT * FROM client";
         $data = $pdo->query($sql);
         $clients = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -77,7 +77,7 @@
     }
 
     public function search($query) {
-        $pdo = $this->database->getConnection();
+        $pdo = $this->db->getConnection();
 
         $sql = "SELECT * FROM client WHERE fullName LIKE :query OR CIN LIKE :query OR address LIKE :query OR phone LIKE :query OR email LIKE :query";
         
