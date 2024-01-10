@@ -12,19 +12,16 @@ class Client
     private $phone;
     private $pdo;
 
-    public function __construct($id, $fullName, $CIN, $adress, $phone, $email)
+    public function __construct($id, $fullName, $CIN, $address, $phone, $email)
     {
 
         $this->id = $id;
         $this->fullName = $fullName;
         $this->CIN = $CIN;
-        $this->adress = $adress;
+        $this->address = $address;
         $this->phone = $phone;
         $this->email = $email;
 
-
-        // $database = Database::getInstance();
-        // $this->pdo = $database->getConnection();
 
     }
     public function getId(){
@@ -38,7 +35,7 @@ class Client
         return $this->CIN;
     }
     
-    public function getAddress(){
+    public function getaddress(){
         return $this->address;
     }
 
@@ -63,7 +60,7 @@ class Client
         return $this->CIN =$CIN;
     }
     
-    public function setAdress($address){
+    public function setAddress($address){
         return $this->address =$address;
     }
 
@@ -75,11 +72,5 @@ class Client
     }
     
 }
-
-
-
-
-
-
 
 ?>

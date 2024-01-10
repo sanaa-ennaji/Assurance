@@ -3,22 +3,22 @@
 // Composition (Dependency Injection):
   require '../models/db.php';
   require '../models/client.php';
-  require 'Iserviceclient.php';
+  require 'Iserviceclient.php'; 
   class ServiceClient implements IServiceClient {
 
-    private $db;
+    private $database;
 
-    public function __construct(Database $db) {
-        $this->db = $db;
+    public function __construct() {
+        $this->database =Database::getInstance();
     }
 
     public function insert(Client $client) {
-        $pdo = $this->db->getConnection();
+        $pdo = $this->database->getConnection();
 
         $id = $client->getId();
         $fullName = $client->getFullName();
         $CIN = $client->getCIN();
-        $address = $client->getAddress();
+        $address = $client->getaddress();
         $phone = $client->getPhone();
         $email = $client->getEmail();
 
@@ -36,7 +36,7 @@
     }
 
     public function edit(Client $client) {
-        $pdo = $this->db->getConnection();
+        $pdo = $this->database->getConnection();
 
         $id = $client->getId();
         $fullName = $client->getFullName();
@@ -57,36 +57,30 @@
 
         $stmt->execute();
     }
-
     public function delete($id) {
-        $pdo = $this->db->getConnection();
+        $pdo = $this->database->getConnection();
         $sql = "DELETE FROM client WHERE id = :id";
 
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(":id", $id);
 
         $stmt->execute();
-    }
+    } 
 
     public function display() {
-        $pdo = $this->db->getConnection();
+        $pdo = $this->database->getConnection();
         $sql = "SELECT * FROM client";
         $data = $pdo->query($sql);
         $clients = $data->fetchAll(PDO::FETCH_ASSOC);
         return $clients;
     }
-
     public function search($query) {
-        $pdo = $this->db->getConnection();
-
+        $pdo = $this->database->getConnection();
         $sql = "SELECT * FROM client WHERE fullName LIKE :query OR CIN LIKE :query OR address LIKE :query OR phone LIKE :query OR email LIKE :query";
-        
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':query', '%' . $query . '%');
         $stmt->execute();
-
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
         return $results;
     }
 }

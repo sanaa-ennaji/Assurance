@@ -10,12 +10,9 @@ class InsuranceOfClient {
         $this->clientId = $clientId;
         $this->insurerId = $insurerId;
 
-        // $database = Database::getInstance();
-        // $this->pdo = $database::getConnection();
 
         
     }
-
 
     public function getClientId() {
         return $this->clientId;

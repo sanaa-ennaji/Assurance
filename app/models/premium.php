@@ -1,6 +1,6 @@
 <?php
 
-require 'db.php';
+// require 'db.php';
 
 
 
@@ -21,8 +21,8 @@ class Premium
         $this->claimId = $claimId;
 
 
-        $database = Database::getInstance();
-        $this->pdo = $database::getConnection();
+        // $database = Database::getInstance();
+        // $this->pdo = $database::getConnection();
 
 
     }

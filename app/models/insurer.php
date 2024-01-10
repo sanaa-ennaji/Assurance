@@ -1,6 +1,6 @@
 <?php
 
-require 'db.php';
+// require 'db.php';
 
 class Insurer {
     // Properties
@@ -19,8 +19,7 @@ class Insurer {
         $this->email = $email;
         $this->phone = $phone;
 
-        $database = Database::getInstance();
-        $this->pdo = $database->getConnection();
+     
 
 
     }
@@ -33,7 +32,7 @@ class Insurer {
         return $this->nom;
     }
 
-    public function getAddress() {
+    public function getaddress() {
         return $this->address;
     }
 
@@ -50,7 +49,7 @@ class Insurer {
         $this->nom = $nom;
     }
 
-    public function setAddress($address) {
+    public function setaddress($address) {
         $this->address = $address;
     }
 
@@ -64,16 +63,6 @@ class Insurer {
 }
 
 
-
-
-
-
-
-// echo $insurer->getId() . "\n";
-// echo $insurer->getNom() . "\n";
-// echo $insurer->getAddress() . "\n";
-// echo $insurer->getEmail() . "\n";
-// echo $insurer->getPhone() . "\n";
 ?>
 
 
