@@ -1,6 +1,6 @@
 <?php
 
-require 'db.php';
+// require 'db.php';
 class Claim{
 
 private $id;
@@ -15,8 +15,8 @@ public function __construct($id,$description,$articleId){
       $this->description=$description;
       $this->articleId=$articleId;
 
-      $database = Database::getInstance();
-      $this->pdo = $database->getConnection();
+      // $database = Database::getInstance();
+      // $this->pdo = $database->getConnection();
 
 }
    public function getId()

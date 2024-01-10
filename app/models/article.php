@@ -1,7 +1,4 @@
 <?php
-
-   require 'db.php';
-    
    class Article {
 
   private $id;
@@ -18,8 +15,6 @@ public function __construct($id,$title ,$description,$clientId,$insurerId){
        $this->$clientId=$clientId;
        $this->insurerId=$insurerId;
 
-       $database = Database::getInstance();
-       $this->pdo = $database->getConnection();
 
  
 
